@@ -1,0 +1,6 @@
+[submodule "api"]
+	path = api
+	url = https://github.com/LegitiDevs/api.git
+[submodule "website"]
+	path = website
+	url = https://github.com/LegitiDevs/website.git

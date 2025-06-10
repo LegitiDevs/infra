@@ -1,0 +1,23 @@
+services:
+  frontend:
+    build: website/
+    restart: always
+    env_file: "website/.env"
+  backend:
+    build: api/
+    restart: always
+    env_file: "api/.env"
+  proxy:
+    image: nginx
+    restart: always
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./pem:/etc/certs
+    ports:
+      - "80:80"
+      - "443:443"
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
