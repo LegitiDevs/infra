@@ -5,6 +5,8 @@ services:
     env_file: "website/.env"
   backend:
     build: api/
+    links:
+      - db
     restart: always
     env_file: "api/.env"
   proxy:
