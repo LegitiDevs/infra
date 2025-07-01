@@ -1,17 +1,17 @@
 services:
   frontend:
     build: website/
-    restart: unless_stopped
+    restart: unless-stopped
     env_file: "website/.env"
   backend:
     build: api/
     links:
       - db
-    restart: unless_stopped
+    restart: unless-stopped
     env_file: "api/.env"
   caddy:
     image: caddy
-    restart: unless_stopped
+    restart: unless-stopped
     cap_add:
       - NET_ADMIN
     ports:
@@ -24,7 +24,7 @@ services:
       - caddy_config:/config
   db:
     image: mongo
-    restart: unless_stopped
+    restart: unless-stopped
     volumes:
       - $PWD/data:/data/db
     ports:
