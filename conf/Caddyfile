@@ -1,0 +1,7 @@
+api.legiti.dev {
+	reverse_proxy backend:3001
+}
+
+legiti.dev {
+	reverse_proxy frontend:3002
+}

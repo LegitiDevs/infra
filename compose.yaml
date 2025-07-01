@@ -1,27 +1,34 @@
 services:
   frontend:
     build: website/
-    restart: always
+    restart: unless_stopped
     env_file: "website/.env"
   backend:
     build: api/
     links:
       - db
-    restart: always
+    restart: unless_stopped
     env_file: "api/.env"
-  proxy:
-    image: nginx
-    restart: always
-    volumes:
-      - ./nginx:/etc/nginx/conf.d
-      - ./pem:/etc/certs
+  caddy:
+    image: caddy
+    restart: unless_stopped
+    cap_add:
+      - NET_ADMIN
     ports:
       - "80:80"
       - "443:443"
+      - "443:443/udp"
+    volumes:
+      - $PWD/conf:/etc/caddy
+      - caddy_data:/data
+      - caddy_config:/config
   db:
     image: mongo
-    restart: always
+    restart: unless_stopped
     volumes:
-      - ./data:/data/db
+      - $PWD/data:/data/db
     ports:
       - "27017:27017"
+volumes:
+  caddy_data:
+  caddy_config:
