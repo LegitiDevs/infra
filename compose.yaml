@@ -22,6 +22,11 @@ services:
       - $PWD/conf:/etc/caddy
       - caddy_data:/data
       - caddy_config:/config
+  anubis:
+    image: ghcr.io/techarohq/anubis:latest
+    environment:
+      BIND: ":3000"
+      TARGET: http://frontend:3002
   db:
     image: mongo
     restart: unless-stopped

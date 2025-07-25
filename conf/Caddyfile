@@ -3,5 +3,8 @@ api.legiti.dev {
 }
 
 legiti.dev {
-	reverse_proxy frontend:3002
+	reverse_proxy http://anubis:3000 {
+		header_up X-Real-Ip {remote_host}
+		header_up X-Http-Version {http.request.proto}
+	}
 }
