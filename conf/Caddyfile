@@ -10,6 +10,6 @@ legiti.dev {
 }
 
 hazel.legiti.dev {
-	root * /home/hazel/hazelpersonal
+	root * /var/www/hazel.legiti.dev
 	file_server
 }

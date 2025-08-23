@@ -22,6 +22,7 @@ services:
       - $PWD/conf:/etc/caddy
       - caddy_data:/data
       - caddy_config:/config
+      - /home/hazel/hazelpersonal:/var/www/hazel.legiti.dev
   anubis:
     image: ghcr.io/techarohq/anubis:latest
     environment:
