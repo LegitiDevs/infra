@@ -8,3 +8,8 @@ legiti.dev {
 		header_up X-Http-Version {http.request.proto}
 	}
 }
+
+hazel.legiti.dev {
+	root * /home/hazel/hazelpersonal
+	file_server
+}
