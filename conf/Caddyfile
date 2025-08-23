@@ -1,5 +1,5 @@
 api.legiti.dev {
-	reverse_proxy backend:3001
+	reverse_proxy backend:3000
 }
 
 legiti.dev {
