@@ -6,10 +6,23 @@ legiti.dev {
 	reverse_proxy http://anubis:3000 {
 		header_up X-Real-Ip {remote_host}
 		header_up X-Http-Version {http.request.proto}
-	}
 }
+
 
 hazel.legiti.dev {
 	root * /var/www/hazel.legiti.dev
 	file_server
+}
+
+${YOUR_TRACKING_DOMAIN} {
+  handle /static {
+    reverse_proxy https://us-assets.i.posthog.com:443 {
+      header_up Host us-assets.i.posthog.com
+      header_down -Access-Control-Allow-Origin
+    }
+  }
+  handle {
+    reverse_proxy https://us.i.posthog.com:443 {
+      header_up Host us.i.posthog.com
+      header_down -Access-Control-Allow-Origin
 }
