@@ -14,7 +14,7 @@ hazel.legiti.dev {
 	file_server
 }
 
-${YOUR_TRACKING_DOMAIN} {
+rawr.legiti.dev {
   handle /static {
     reverse_proxy https://us-assets.i.posthog.com:443 {
       header_up Host us-assets.i.posthog.com
