@@ -25,5 +25,6 @@ rawr.legiti.dev {
     reverse_proxy https://us.i.posthog.com:443 {
       header_up Host us.i.posthog.com
       header_down -Access-Control-Allow-Origin
+    }
 }
 
