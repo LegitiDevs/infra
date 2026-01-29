@@ -26,3 +26,4 @@ rawr.legiti.dev {
       header_up Host us.i.posthog.com
       header_down -Access-Control-Allow-Origin
 }
+
