@@ -6,6 +6,7 @@ legiti.dev {
 	reverse_proxy http://anubis:3000 {
 		header_up X-Real-Ip {remote_host}
 		header_up X-Http-Version {http.request.proto}
+  }
 }
 
 
@@ -26,5 +27,5 @@ rawr.legiti.dev {
       header_up Host us.i.posthog.com
       header_down -Access-Control-Allow-Origin
     }
+  }
 }
-
