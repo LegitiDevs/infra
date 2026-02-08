@@ -12,7 +12,7 @@ legiti.dev {
 
 hazel.legiti.dev {
 	handle_path /adv {
-		reverse_proxy localhost:3004
+		reverse_proxy 172.17.0.1:3004
 	}
 	root * /var/www/hazel.legiti.dev
 	file_server
