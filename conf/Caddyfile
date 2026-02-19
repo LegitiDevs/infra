@@ -9,6 +9,9 @@ legiti.dev {
   }
 }
 
+status.legiti.dev {
+	reverse_proxy uptime-kuma:3001
+}
 
 hazel.legiti.dev {
 	handle_path /adv/* {
