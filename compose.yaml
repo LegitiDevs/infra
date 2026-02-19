@@ -33,6 +33,8 @@ services:
     environment:
       BIND: ":3000"
       TARGET: http://frontend:3002
+      OG_PASSTHROUGH: true
+      OG_EXPIRY_TIME: 1h
   db:
     image: mongo
     restart: unless-stopped
