@@ -13,6 +13,10 @@ status.legiti.dev {
 	reverse_proxy uptime-kuma:3001
 }
 
+ratings.legiti.dev {
+        reverse_proxy 172.17.0.1:3005
+}
+
 hazel.legiti.dev {
 	handle_path /adv/* {
 		reverse_proxy 172.17.0.1:3004
