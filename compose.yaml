@@ -28,6 +28,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
       - /home/hazel/hazelpersonal:/var/www/hazel.legiti.dev
+      - /home/trplnr/legitiawards/build:/var/www/legitiawards.legiti.dev
   anubis:
     image: ghcr.io/techarohq/anubis:latest
     environment:

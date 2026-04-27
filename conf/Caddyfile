@@ -22,7 +22,7 @@ mosse.legiti.dev {
 }
 
 legitiawards.legiti.dev {
-        root * /home/trplnr/legitiawards/build
+        root * /var/www/legitiawards.legiti.dev
         file_server
 }
 
