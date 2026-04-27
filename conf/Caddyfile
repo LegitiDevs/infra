@@ -22,7 +22,8 @@ mosse.legiti.dev {
 }
 
 legitiawards.legiti.dev {
-        reverse_proxy 172.17.0.1:3007
+        root * /home/trplnr/legitiawards/build
+        file_server
 }
 
 hazel.legiti.dev {
