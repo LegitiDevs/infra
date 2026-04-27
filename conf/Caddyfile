@@ -21,6 +21,10 @@ mosse.legiti.dev {
         reverse_proxy 172.17.0.1:3006
 }
 
+legitiawards.legiti.dev {
+        reverse_proxy 172.17.0.1:3007
+}
+
 hazel.legiti.dev {
 	handle_path /adv/* {
 		reverse_proxy 172.17.0.1:3004
