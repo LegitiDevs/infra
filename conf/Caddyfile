@@ -21,6 +21,19 @@ hazel.legiti.dev {
 	file_server
 }
 
+legitiawards.legiti.dev {
+        root * /var/www/legitiawards.legiti.dev
+        file_server
+}
+
+ratings.legiti.dev {
+        reverse_proxy 172.17.0.1:3005
+}
+
+mosse.legiti.dev {
+        reverse_proxy 172.17.0.1:3006
+}
+
 rawr.legiti.dev {
   handle /static {
     reverse_proxy https://us-assets.i.posthog.com:443 {
