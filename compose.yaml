@@ -36,6 +36,13 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - ./pgdata:/var/lib/postgresql
+    ports:
+      - "5432:5432"
 volumes:
   caddy_data:
   caddy_config:
