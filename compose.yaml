@@ -39,6 +39,7 @@ services:
   postgres:
     image: postgres
     restart: unless-stopped
+    env_file: "postgres.env"
     volumes:
       - ./pgdata:/var/lib/postgresql
     ports:
