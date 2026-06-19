@@ -35,7 +35,7 @@ mosse.legiti.dev {
 }
 
 games.legiti.dev {
-        reverse_proxy 172.17.0.1:3007
+        reverse_proxy http://games:3007
 }
 
 rawr.legiti.dev {
