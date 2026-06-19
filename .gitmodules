@@ -4,3 +4,6 @@
 [submodule "website"]
 	path = website
 	url = https://github.com/LegitiDevs/website.git
+[submodule "games"]
+	path = games
+	url = https://github.com/LegitiDevs/games
