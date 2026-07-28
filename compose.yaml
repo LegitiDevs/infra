@@ -5,15 +5,15 @@ services:
     volumes:
       - ./uptime-data:/app/data
   frontend:
-    build: website/
+    image: ghcr.io/legitidevs/website:latest
     restart: unless-stopped
-    env_file: "website/.env"
+    env_file: "website.env"
   backend:
-    build: api/
+    image: ghcr.io/legitidevs/api:latest
     links:
       - db
     restart: unless-stopped
-    env_file: "api/.env"
+    env_file: "api.env"
   games:
     build: games/
     links:
@@ -50,6 +50,12 @@ services:
       - ./pgdata:/var/lib/postgresql
     ports:
       - "5432:5432"
+  watchtower:
+    image: nickfedor/watchtower:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
 volumes:
   caddy_data:
   caddy_config:
