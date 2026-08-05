@@ -38,6 +38,13 @@ games.legiti.dev {
         reverse_proxy http://games:3007
 }
 
+wwlc.legiti.dev {
+        handle_path /api/* {
+                reverse_proxy http://wwlc-backend:3000
+        }
+        reverse_proxy http://wwlc-frontend:3000
+}
+
 rawr.legiti.dev {
   handle /static {
     reverse_proxy https://us-assets.i.posthog.com:443 {
