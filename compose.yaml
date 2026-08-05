@@ -20,6 +20,12 @@ services:
       - postgres
     restart: unless-stopped
     env_file: "wwlc-backend.env"
+  wwlc-frontend:
+    image: ghcr.io/legiticoins/frontend:latest
+    links:
+      - postgres
+    restart: unless-stopped
+    env_file: "wwlc-frontend.env"
   games:
     build: games/
     links:

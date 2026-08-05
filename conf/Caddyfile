@@ -42,7 +42,7 @@ wwlc.legiti.dev {
         handle_path /api/* {
                 reverse_proxy http://wwlc-backend:3000
         }
-        reverse_proxy http://wwlc-frontend:3000
+        reverse_proxy http://wwlc-frontend:4321
 }
 
 rawr.legiti.dev {
