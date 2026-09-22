@@ -9,6 +9,12 @@ legiti.dev {
   }
 }
 
+docs.legiti.dev {
+	root * /var/www/docs.legiti.dev
+	file_server
+	try_files {path}.html {path} /
+}
+
 status.legiti.dev {
 	reverse_proxy uptime-kuma:3001
 }

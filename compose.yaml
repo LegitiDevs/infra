@@ -14,6 +14,11 @@ services:
       - db
     restart: unless-stopped
     env_file: "api.env"
+  docs:
+    image: ghcr.io/legitidevs/documentation:master
+    restart: no
+    volumes:
+      - documentation:/output
   wwlc-backend:
     image: ghcr.io/legiticoins/backend:latest
     links:
@@ -45,6 +50,7 @@ services:
       - $PWD/conf:/etc/caddy
       - caddy_data:/data
       - caddy_config:/config
+      - documentation:/var/www/docs.legiti.dev:ro
       - /home/hazel/hazelpersonal:/var/www/hazel.legiti.dev
       - /home/trplnr/legitiawards/build:/var/www/legitiawards.legiti.dev
   db:
@@ -71,3 +77,4 @@ services:
 volumes:
   caddy_data:
   caddy_config:
+  documentation:
