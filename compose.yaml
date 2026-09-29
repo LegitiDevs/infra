@@ -58,7 +58,6 @@ services:
       - caddy_config:/config
       - documentation:/var/www/docs.legiti.dev:ro
       - /home/hazel/hazelpersonal:/var/www/hazel.legiti.dev
-      - /home/trplnr/legitiawards/build:/var/www/legitiawards.legiti.dev
   db:
     image: mongo
     restart: unless-stopped
