@@ -28,8 +28,7 @@ hazel.legiti.dev {
 }
 
 legitiawards.legiti.dev {
-        root * /var/www/legitiawards.legiti.dev
-        file_server
+        reverse_proxy http://legitiawards-website:3008
 }
 
 ratings.legiti.dev {

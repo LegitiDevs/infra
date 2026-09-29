@@ -37,6 +37,12 @@ services:
       - postgres
     restart: unless-stopped
     env_file: "games/.env"
+  legitiawards-website:
+    image: ghcr.io/legitidevs/legitiawards-website:latest
+    links:
+      - db
+    restart: unless-stopped
+    env_file: "legitiawards-website.env"
   caddy:
     image: caddy
     restart: unless-stopped
