@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
     env_file: "api.env"
   docs:
-    image: ghcr.io/legitidevs/documentation:master
+    image: ghcr.io/legitidevs/documentation:latest
     restart: no
     volumes:
       - documentation:/output
@@ -44,7 +44,7 @@ services:
     restart: unless-stopped
     env_file: "legitiawards-website.env"
   caddy:
-    image: caddy
+    image: caddy:2
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
@@ -59,14 +59,14 @@ services:
       - documentation:/var/www/docs.legiti.dev:ro
       - /home/hazel/hazelpersonal:/var/www/hazel.legiti.dev
   db:
-    image: mongo:8.3.11
+    image: mongo:8
     restart: unless-stopped
     volumes:
       - ./data:/data/db
     ports:
       - "27017:27017"
   postgres:
-    image: postgres
+    image: postgres:18
     restart: unless-stopped
     env_file: "postgres.env"
     volumes:
@@ -75,7 +75,6 @@ services:
       - "5432:5432"
   watchtower:
     image: nickfedor/watchtower:latest
-    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
